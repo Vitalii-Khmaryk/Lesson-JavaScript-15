@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson#15</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+      .box1 {
+        width: 100%;
+        height: 800px;
+        background-color: lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 12px;
+      }
+      .box2{
+        width: 100%;
+        height: 600px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: space-evenly;
+
+      }
+      .slide-text{
+font-size: 30px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .line{
+        display: inline-block;
+        background-color: red;
+        height: 6px;
+        width: 20px;
+      }
+      .box3{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        width: 100%;
+        height: 800px;
+        background-color: lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 52px;
+      }
+.ScrollUp:hover{
+color: red;
+}
+.sp1:hover{
+color: red;
+}
+    </style>
+  </head>
+  <body>
+    <div class="box1"><span class="sp1">Scroll down</span></div>
+
+    <div class="box2">
+        <div>
+<span class="slide-text">"Slide from Left"</span>
+<br>
+<span class="line"></span>
+        </div>
+<div style="margin-top: 10%;"><img src="nout.jpg" class="image" alt=""></div>
+    </div>
+    <div class="box3">
+        <span class="ScrollUp"> Scroll up</span>
+    </div>
+    <script src="scriptJs15.js"></script>
+  </body>
+</html>

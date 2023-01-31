@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson15 js task2</title>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .conteiner {
+        height: 100vh;
+        width: 100%;
+      }
+      .white {
+        background-color: white;
+        width: 100%;
+        height: 50%;
+      }
+      .black {
+        background-color: black;
+        width: 100%;
+        height: 50%;
+      }
+      .screen {
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        width: 788px;
+        height: 539px;
+        top: 70px;
+        left: 380px;
+        z-index: 2;
+        display: flex;
+      }
+      .left-screen {
+        border-right: 5px solid black;
+        z-index: 3;
+        position: relative;
+        width: 50%;
+        height: 100%;
+      }
+      .right-screen {
+        border-left: 5px solid black;
+        z-index: 3;
+        position: relative;
+        width: 50%;
+        height: 100%;
+      }
+      .inp {
+        margin-top: 20px;
+        width: 300px;
+        height: 30px;
+        background-color: rgb(255, 255, 255);
+        margin-left: 15%;
+        border-top-color: whitesmoke;
+        border-left-color: whitesmoke;
+        border-right-color: gray;
+        border-bottom-color: black;
+        border-bottom: 3px solid;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .inp:focus {
+        outline: none;
+      }
+      .btn {
+        width: 90px;
+        height: 40px;
+        color: white;
+        margin-left: 40%;
+        background-color: rgb(29, 0, 0);
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+      .shadow {
+        box-shadow: 1px 1px 3px 4px rgb(83, 81, 81);
+      }
+      .modal {
+        display: none;
+        position: absolute;
+        top: 18%;
+        left: 25%;
+        z-index: 4;
+        background-color: rgb(197, 141, 141);
+        border-radius: 10px;
+        width: 700px;
+        height: 90px;
+      }
+      .modal2 {
+        display: none;
+        position: absolute;
+        top: 18%;
+        left: 25%;
+        z-index: 4;
+        background-color: rgb(197, 141, 141);
+        border-radius: 10px;
+        width: 700px;
+        height: 90px;
+      }
+      .d-flex {
+        display: flex;
+        justify-content: space-between;
+      }
+      .formStyle {
+        margin-top: 20px;
+        margin-left: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+      input[type="checkbox"] {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conteiner">
+      <div class="white">
+        <img
+          src="pencil.png"
+          alt=""
+          style="position: relative; top: 20%; right: 5%"
+        />
+        <div class="screen">
+          <div class="left-screen">
+            <p
+              style="
+                color: red;
+                font-size: 18px;
+                margin-top: 20px;
+                margin-left: 20px;
+              "
+            >
+              Список завдань
+            </p>
+            <form name="f1" class="formStyle">
+              <label for="i1">
+                <input type="checkbox" name="galo" class="cbox1" id="i1" />
+                <span class="spanTag">HTML5</span>
+              </label>
+
+              <label for="i2">
+                <input type="checkbox" name="galo" class="cbox2" id="i2" />
+                <span class="spanTag">CSS3</span>
+              </label>
+
+              <label for="i3">
+                <input type="checkbox" name="galo" class="cbox3" id="i3" />
+                <span class="spanTag">SCSS/SASS</span>
+              </label>
+
+              <label for="i4">
+                <input type="checkbox" name="galo" class="cbox4" id="i4" />
+                <span class="spanTag">Bootstrap</span>
+              </label>
+            </form>
+          </div>
+          <div class="right-screen">
+            <p
+              style="
+                color: red;
+                font-size: 18px;
+                margin-left: 30%;
+                margin-top: 20px;
+              "
+            >
+              Додати нове завдання
+            </p>
+            <form name="f2">
+              <input
+                type="text"
+                name="inpText"
+                title="write task"
+                class="inp"
+              />
+              <br />
+              <br />
+              <input type="button" value="додати" class="btn" id="buttonAdd" />
+            </form>
+          </div>
+        </div>
+        <img
+          src="https://web-mobile-first.s3.eu-west-3.amazonaws.com/production/small_apple_ipad_mini_957c152359.png"
+          style="
+            position: relative;
+            background-color: white;
+            border-radius: 30px;
+            height: 600px;
+            width: 1000px;
+            top: 10%;
+            right: 15%;
+          "
+          alt=""
+        />
+      </div>
+      <div class="black"></div>
+    </div>
+
+    <div class="modal">
+      <div class="d-flex">
+        <div>
+          <h2
+            style="
+              font-size: 18px;
+              font-weight: bold;
+              color: brown;
+              padding-top: 15px;
+              padding-left: 15px;
+            "
+          >
+            Попередження!
+          </h2>
+        </div>
+        <div><i class="uil uil-times"></i></div>
+      </div>
+
+      <div>
+        <p style="color: brown; padding-left: 15px">
+          Пусте поле не можна добавити
+        </p>
+      </div>
+    </div>
+
+    <div class="modal2">
+      <div class="d-flex">
+        <div>
+          <h2
+            style="
+              font-size: 18px;
+              font-weight: bold;
+              color: brown;
+              padding-top: 15px;
+              padding-left: 15px;
+            "
+          >
+            Попередження!
+          </h2>
+        </div>
+        <div><i class="uil uil-times crs"></i></div>
+      </div>
+
+      <div>
+        <p style="color: brown; padding-left: 15px">
+          Останій таск зі списку ви не можете видалити.
+        </p>
+      </div>
+    </div>
+
+    <script src="scriptjs15task2.js"></script>
+  </body>
+</html>
